@@ -6,7 +6,7 @@
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        [HttpGet]
+        [HttpGet("search")]
         public IEnumerable<string> Search(string q)
         {
             return new string[] { "value1", "value2" };
