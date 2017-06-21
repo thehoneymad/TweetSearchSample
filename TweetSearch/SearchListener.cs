@@ -31,45 +31,35 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface ISearchListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.searchUnit"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterSearchUnit([NotNull] SearchParser.SearchUnitContext context);
+	void EnterExpr([NotNull] SearchParser.ExprContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.searchUnit"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitSearchUnit([NotNull] SearchParser.SearchUnitContext context);
+	void ExitExpr([NotNull] SearchParser.ExprContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.defaultOp"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.term"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterDefaultOp([NotNull] SearchParser.DefaultOpContext context);
+	void EnterTerm([NotNull] SearchParser.TermContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.defaultOp"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.term"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitDefaultOp([NotNull] SearchParser.DefaultOpContext context);
+	void ExitTerm([NotNull] SearchParser.TermContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.op"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterExactText([NotNull] SearchParser.ExactTextContext context);
+	void EnterOp([NotNull] SearchParser.OpContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.op"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitExactText([NotNull] SearchParser.ExactTextContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.hashText"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterHashText([NotNull] SearchParser.HashTextContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.hashText"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitHashText([NotNull] SearchParser.HashTextContext context);
+	void ExitOp([NotNull] SearchParser.OpContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="SearchParser.toText"/>.
 	/// </summary>
@@ -91,43 +81,13 @@ public interface ISearchListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFromText([NotNull] SearchParser.FromTextContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.term"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.hashText"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterTerm([NotNull] SearchParser.TermContext context);
+	void EnterHashText([NotNull] SearchParser.HashTextContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.term"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.hashText"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitTerm([NotNull] SearchParser.TermContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterExpr([NotNull] SearchParser.ExprContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitExpr([NotNull] SearchParser.ExprContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.op"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterOp([NotNull] SearchParser.OpContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.op"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitOp([NotNull] SearchParser.OpContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.word"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterWord([NotNull] SearchParser.WordContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.word"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitWord([NotNull] SearchParser.WordContext context);
+	void ExitHashText([NotNull] SearchParser.HashTextContext context);
 }

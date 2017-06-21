@@ -35,53 +35,41 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class SearchBaseListener : ISearchListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.searchUnit"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSearchUnit([NotNull] SearchParser.SearchUnitContext context) { }
+	public virtual void EnterExpr([NotNull] SearchParser.ExprContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.searchUnit"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSearchUnit([NotNull] SearchParser.SearchUnitContext context) { }
+	public virtual void ExitExpr([NotNull] SearchParser.ExprContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.defaultOp"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.term"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDefaultOp([NotNull] SearchParser.DefaultOpContext context) { }
+	public virtual void EnterTerm([NotNull] SearchParser.TermContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.defaultOp"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.term"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDefaultOp([NotNull] SearchParser.DefaultOpContext context) { }
+	public virtual void ExitTerm([NotNull] SearchParser.TermContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.op"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExactText([NotNull] SearchParser.ExactTextContext context) { }
+	public virtual void EnterOp([NotNull] SearchParser.OpContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.op"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExactText([NotNull] SearchParser.ExactTextContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.hashText"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterHashText([NotNull] SearchParser.HashTextContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.hashText"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitHashText([NotNull] SearchParser.HashTextContext context) { }
+	public virtual void ExitOp([NotNull] SearchParser.OpContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="SearchParser.toText"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -107,53 +95,17 @@ public partial class SearchBaseListener : ISearchListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFromText([NotNull] SearchParser.FromTextContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.term"/>.
+	/// Enter a parse tree produced by <see cref="SearchParser.hashText"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTerm([NotNull] SearchParser.TermContext context) { }
+	public virtual void EnterHashText([NotNull] SearchParser.HashTextContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.term"/>.
+	/// Exit a parse tree produced by <see cref="SearchParser.hashText"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTerm([NotNull] SearchParser.TermContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpr([NotNull] SearchParser.ExprContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpr([NotNull] SearchParser.ExprContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.op"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterOp([NotNull] SearchParser.OpContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.op"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitOp([NotNull] SearchParser.OpContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SearchParser.word"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterWord([NotNull] SearchParser.WordContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SearchParser.word"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitWord([NotNull] SearchParser.WordContext context) { }
+	public virtual void ExitHashText([NotNull] SearchParser.HashTextContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

@@ -1,23 +1,15 @@
 grammar Search;
 
-searchUnit: term| expr;
-
-defaultOp: word*;
-exactText: '"' word* '"';
-hashText: '#'word;
-toText: 'to:'word;
-fromText: 'from:'word;
-
-term: defaultOp | exactText | hashText | toText | fromText;
-
-expr: term (op term)+;
-
+expr: term (op term)*;
+term: EXACTTEXT | hashText | toText | fromText | ID;
 op: AND | OR;
-word: ID;
 
-// constants
+toText: 'to:'ID;
+fromText: 'from:'ID;
+hashText: '#'ID;
+
+// lexer rule
+EXACTTEXT: '"' ~'"'* '"';
+OR: 'or';
+AND: 'and';
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;
-OR: 'OR';
-AND: 'AND';
-
-WS: [ \n\t\r]+ -> skip;
