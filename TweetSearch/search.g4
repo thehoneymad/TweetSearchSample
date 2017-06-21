@@ -11,5 +11,5 @@ hashText: '#'ID;
 // lexer rule
 EXACTTEXT: '"' ~'"'* '"';
 OR: 'or';
-AND: 'and';
+AND: ' ' | 'and';
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;
