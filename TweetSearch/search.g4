@@ -1,4 +1,4 @@
-grammar search;
+grammar Search;
 
 searchUnit: term| expr;
 
