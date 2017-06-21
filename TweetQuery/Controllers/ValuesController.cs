@@ -1,15 +1,17 @@
 ﻿namespace TweetQuery.Controllers
 {
-    using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
 
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
         [HttpGet("search")]
-        public IEnumerable<string> Search(string q)
+        public IActionResult Search([FromQuery] string q)
         {
-            return new string[] { "value1", "value2" };
+            if (string.IsNullOrEmpty(q))
+                return BadRequest();
+
+            return Ok();
         }
     }
 }
