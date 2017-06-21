@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace TweetQuery
+﻿namespace TweetQuery
 {
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+    using TweetQuery.Lib;
+    using TweetQuery.Lib.Model;
+
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -23,8 +25,12 @@ namespace TweetQuery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             // Add framework services.
             services.AddMvc();
+
+            var dbrepository = new CosmosDBRepository<Tweet>();
+            services.AddSingleton(dbrepository);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
