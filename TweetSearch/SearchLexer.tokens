@@ -5,6 +5,7 @@ EXACTTEXT=4
 OR=5
 AND=6
 ID=7
+WS=8
 'to:'=1
 'from:'=2
 '#'=3

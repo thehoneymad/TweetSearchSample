@@ -36,7 +36,7 @@ public partial class SearchParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
-		T__0=1, T__1=2, T__2=3, EXACTTEXT=4, OR=5, AND=6, ID=7;
+		T__0=1, T__1=2, T__2=3, EXACTTEXT=4, OR=5, AND=6, ID=7, WS=8;
 	public const int
 		RULE_expr = 0, RULE_term = 1, RULE_op = 2, RULE_toText = 3, RULE_fromText = 4, 
 		RULE_hashText = 5;
@@ -48,7 +48,7 @@ public partial class SearchParser : Parser {
 		null, "'to:'", "'from:'", "'#'", null, "'or'", "'and'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, "EXACTTEXT", "OR", "AND", "ID"
+		null, null, null, null, "EXACTTEXT", "OR", "AND", "ID", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -392,7 +392,7 @@ public partial class SearchParser : Parser {
 
 	private static char[] _serializedATN = {
 		'\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786', 
-		'\x5964', '\x3', '\t', '*', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', '\t', 
+		'\x5964', '\x3', '\n', '*', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', '\t', 
 		'\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4', '\x6', 
 		'\t', '\x6', '\x4', '\a', '\t', '\a', '\x3', '\x2', '\x3', '\x2', '\x3', 
 		'\x2', '\x3', '\x2', '\a', '\x2', '\x13', '\n', '\x2', '\f', '\x2', '\xE', 

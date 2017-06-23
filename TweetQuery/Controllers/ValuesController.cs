@@ -23,8 +23,8 @@
             if (string.IsNullOrEmpty(q))
                 return BadRequest();
 
-            this.context.GenerateQuery(q);
-            return Ok();
+            var query = this.context.GenerateQuery(q).Trim();
+            return Ok(query);
         }
     }
 }
