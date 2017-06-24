@@ -7,12 +7,12 @@
     using TweetSearch.CosmosDb.DocumentDb;
 
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class TweetsController : Controller
     {
         private CosmosDBRepository<Tweet> repository;
         private DocumentDbContext context;
 
-        public ValuesController(CosmosDBRepository<Tweet> repository)
+        public TweetsController(CosmosDBRepository<Tweet> repository)
         {
             this.repository = repository;
             this.context = new DocumentDbContext();
