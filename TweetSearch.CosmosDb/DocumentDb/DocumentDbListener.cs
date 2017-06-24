@@ -41,5 +41,11 @@
             var hashtag = context.GetText().Enquote();
             this.whereClause = string.Concat(whereClause, " ", $"udf.matchArrayElement(twt.entities.hashtags, {hashtag})");
         }
+
+        public override void EnterExactText([NotNull] SearchParser.ExactTextContext context)
+        {
+            var text = context.GetText();
+            this.whereClause = string.Concat(whereClause, " ", $"CONTAINS(twt.text, {text})");
+        }
     }
 }
