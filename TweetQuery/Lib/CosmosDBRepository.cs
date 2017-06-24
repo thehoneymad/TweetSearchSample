@@ -9,7 +9,7 @@
     public class CosmosDBRepository<T> where T : class
     {
         private readonly string Endpoint = "https://tweet.documents.azure.com:443/";
-        private readonly string Key = "vpKXCEgTEVH23mW4oi8H7mi2ZhaqpJITIXpIteSOssKc8nW9KKNjNCUmcwtCimmTL8W3yIdKaeLgq71tN4jejA==";
+        private readonly string Key = "fjp9Z3qKPxSOfE0KS1aaKvUY27B8IoL347sdtMBMjkCQqPmoaKjGXoyltrItNXNN6h4QjAYLSY5nyb2djWWUOQ==";
         private readonly string DatabaseId = "tweetdb";
         private readonly string CollectionId = "tweets";
         private DocumentClient client;
