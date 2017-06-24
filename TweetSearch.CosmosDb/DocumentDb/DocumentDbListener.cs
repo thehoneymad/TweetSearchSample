@@ -6,42 +6,41 @@
     public class DocumentDbListener : SearchBaseListener
     {
         private string projection = "SELECT * FROM twt";
-        private string join = string.Empty;
+        private string join = "JOIN mention in twt.entities.user_mentions";
+        private string where = string.Empty;
 
-        public DocumentDbListener()
+        public string Output
         {
-            this.Output = projection;
+            get { return projection + " " + join + " " + where; }
         }
-        public string Output { get; internal set; }
 
         public override void EnterExpr([NotNull] SearchParser.ExprContext context)
         {
-            this.Output = string.Concat(Output, " ", "WHERE");
+            this.where = string.Concat(where, " ", "WHERE");
         }
 
         public override void EnterFromText([NotNull] SearchParser.FromTextContext context)
         {
-            var userId = context.GetText().Substring(5).Enquote();
-            this.Output = string.Concat(Output, " ", "twt.user.screen_name = ", userId);
+            var screenName = context.GetText().Substring(5).Enquote();
+            this.where = string.Concat(where, " ", "twt.user.screen_name = ", screenName);
         }
 
         public override void EnterOp([NotNull] SearchParser.OpContext context)
         {
             var text = context.GetText();
-            this.Output = string.Concat(this.Output, " ", text.ToUpper());
+            this.where = string.Concat(this.where, " ", text.ToUpper());
         }
 
         public override void EnterToText([NotNull] SearchParser.ToTextContext context)
         {
-            join = "JOIN user_mention in twt.entities.user_mentions";
-            var userId = context.GetText().Substring(3).Enquote();
-            this.Output = string.Concat(Output, " ", $"ARRAY_CONTAINS(twt.entities.user_mentions, {{ \"screen_name\" : {userId} }})");
+            var screenName = context.GetText().Substring(3).Enquote();
+            this.where = string.Concat(where, " ", $"mention.screen_name = {screenName}");
         }
 
         public override void EnterHashText([NotNull] SearchParser.HashTextContext context)
         {
             var hashtag = context.GetText().Substring(3).Enquote();
-            this.Output = string.Concat(Output, " ", $"ARRAY_CONTAINS(twt.entities.hashtags, {hashtag})");
+            this.where = string.Concat(where, " ", $"ARRAY_CONTAINS(twt.entities.hashtags, {hashtag})");
         }
     }
 }
