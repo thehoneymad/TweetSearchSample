@@ -1,12 +1,13 @@
 grammar Search;
 
 expr: term (op term)*;
-term: EXACTTEXT | hashText | toText | fromText | ID;
+term: exactText | hashText | toText | fromText;
 op: AND | OR;
 
 toText: 'to:'ID;
 fromText: 'from:'ID;
 hashText: '#'ID;
+exactText: EXACTTEXT;
 
 // lexer rule
 EXACTTEXT: '"' ~'"'* '"';

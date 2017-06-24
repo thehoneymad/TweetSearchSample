@@ -106,6 +106,18 @@ public partial class SearchBaseListener : ISearchListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitHashText([NotNull] SearchParser.HashTextContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExactText([NotNull] SearchParser.ExactTextContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExactText([NotNull] SearchParser.ExactTextContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

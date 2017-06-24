@@ -90,4 +90,14 @@ public interface ISearchListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitHashText([NotNull] SearchParser.HashTextContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExactText([NotNull] SearchParser.ExactTextContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="SearchParser.exactText"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExactText([NotNull] SearchParser.ExactTextContext context);
 }
