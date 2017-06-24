@@ -1,6 +1,7 @@
 ﻿namespace TweetQuery.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
     using TweetQuery.Lib;
     using TweetQuery.Lib.Model;
     using TweetSearch.CosmosDb.DocumentDb;
@@ -18,13 +19,14 @@
         }
 
         [HttpGet("search")]
-        public IActionResult Search([FromQuery] string q)
+        public async Task<IActionResult> Search([FromQuery] string q)
         {
             if (string.IsNullOrEmpty(q))
                 return BadRequest();
 
-            var query = this.context.GenerateQuery(q).Trim();
-            return Ok(query);
+            var querySql = this.context.GenerateQuery(q).Trim();
+            var result = await repository.GetItemsAsync(querySql);
+            return Ok(result);
         }
     }
 }

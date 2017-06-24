@@ -5,7 +5,7 @@
 
     public class DocumentDbListener : SearchBaseListener
     {
-        private string projection = "SELECT * FROM twt";
+        private string projection = "SELECT VALUE twt FROM twt";
         private string join = "JOIN mention in twt.entities.user_mentions";
         private string where = string.Empty;
 
