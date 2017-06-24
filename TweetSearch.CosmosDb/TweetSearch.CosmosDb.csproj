@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SqlKata" Version="1.0.0-beta-32" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TweetSearch\TweetSearch.csproj" />
   </ItemGroup>
 
