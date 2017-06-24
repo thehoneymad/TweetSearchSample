@@ -45,7 +45,7 @@ public partial class SearchParser : Parser {
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "'to:'", "'from:'", "'#'", null, "'or'", "'and'"
+		null, "'to:'", "'from:'", "'#'", null, "'OR'", "'AND'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, "EXACTTEXT", "OR", "AND", "ID", "WS"

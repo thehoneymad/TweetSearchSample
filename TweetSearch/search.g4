@@ -11,7 +11,7 @@ exactText: EXACTTEXT;
 
 // lexer rule
 EXACTTEXT: '"' ~'"'* '"';
-OR: 'or';
-AND: 'and';
+OR: 'OR';
+AND: 'AND';
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;
 WS: [ \n\t\r]+ -> skip;
