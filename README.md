@@ -4,5 +4,5 @@
 * Clone
 * Build and Run
 * Send a sample GET request to
-http://localhost:5000/api/tweets/search?q=to:hatena_sugoi AND from:maeta_tw OR %23HopesUp OR "Surely June is a summer"
+`http://localhost:5000/api/tweets/search?q=to:hatena_sugoi AND from:maeta_tw OR %23HopesUp OR "Surely June is a summer"`
 
