@@ -3,11 +3,11 @@
     using Antlr4.Runtime;
     using Antlr4.Runtime.Tree;
 
-    public class DocumentDbContext
+    public class TweetQueryContext
     {
         private DocumentDbListener listener;
 
-        public DocumentDbContext()
+        public TweetQueryContext()
         {
             this.listener = new DocumentDbListener();
         }

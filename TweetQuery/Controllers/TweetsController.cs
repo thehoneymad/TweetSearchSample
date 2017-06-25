@@ -10,12 +10,12 @@
     public class TweetsController : Controller
     {
         private CosmosDBRepository<Tweet> repository;
-        private DocumentDbContext context;
+        private TweetQueryContext context;
 
         public TweetsController(CosmosDBRepository<Tweet> repository)
         {
             this.repository = repository;
-            this.context = new DocumentDbContext();
+            this.context = new TweetQueryContext();
         }
 
         [HttpGet("search")]

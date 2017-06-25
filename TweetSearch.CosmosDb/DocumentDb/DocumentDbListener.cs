@@ -6,16 +6,16 @@
     public class DocumentDbListener : SearchBaseListener
     {
         private string projectionClause = "SELECT * FROM twt";
-        private string whereClause = string.Empty;
+        private string whereClause;
 
         public string Output
         {
-            get { return projectionClause + whereClause; }
+            get { return projectionClause + " " + whereClause; }
         }
 
         public override void EnterExpr([NotNull] SearchParser.ExprContext context)
         {
-            this.whereClause = string.Concat(whereClause, " ", "WHERE");
+            this.whereClause = "WHERE";
         }
 
         public override void EnterFromText([NotNull] SearchParser.FromTextContext context)
